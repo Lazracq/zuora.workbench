@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()" #login="ngForm" >
+  <p> {{submitted}}</p>
+  <p> {{diagnostic}}</p>
+    <div class="form-group">
+      <label for="email">API Access key</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required [(ngModel)]="model.username" name="username" #spy>
+      TODO: remove this: {{model.username}}
+      <br>TODO: remove this: {{spy.className}}
+    </div>
+    <div class="form-group">
+      <label for="secret">API Access secret</label>
+      <input type="password" class="form-control" id="secret" placeholder="Password" required [(ngModel)]="model.password" name="password">
+    </div>
+    <div class="form-group">
+      <label for="env">Environment</label>
+      <select id="env" class="custom-select" [(ngModel)]="model.environment" name="environment">
+          <option *ngFor="let env of environments" [value]="env">{{env}}</option>
+      </select>
+    </div>
+    <button  type="submit" class="btn btn-primary">Use this login</button>
+  </form>
+  <br/>
